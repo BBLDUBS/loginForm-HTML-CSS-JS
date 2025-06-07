@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="login-form">
+    <p>Please log in</p>
+    <form>
+        <label for="usernameInput"></label><input type="text" placeholder="Enter your username" id="usernameInput" required /></br>
+        <label for="passwordInput"></label><input type="password" id="passwordInput" placeholder="Enter your password" required />
+        <p id="message"></p>
+        <button><a href="#" onclick="verifyUser()">Log in</a></button>
+        <p>Don't have an account? <a href="#">Register here</a></p>
+        </br></br>
+    </form>
+    </div>
+    <script>
+        function verifyUser() {
+            var username = document.getElementById("usernameInput").value;
+            var password = document.getElementById("passwordInput").value;
+            // Call the function to check credentials (pass parameters)
+            
+            checkUserCreds(username, password);
+        }
+        // Function to check user credentials
+
+        function checkUserCreds(username, password) {
+            var systemUsername = "Babalo";
+            var systemPassword = "1234";
+        // Conditional to check if the username and password match the system credentials
+        
+            if (username == systemUsername && password == systemPassword) {
+                document.getElementById("message").innerHTML = "Correct credentials, Logging you in...";
+            } else {
+                document.getElementById("message").innerHTML = "Username or password is incorrect, please try again.";
+            }
+        }
+    </script>
+</body>
+</html>
